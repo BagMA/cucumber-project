@@ -3,6 +3,8 @@ package ibs.steps;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
+import static ibs.steps.MySteps.driver;
+
 public class Hooks {
 
 
@@ -11,13 +13,9 @@ public class Hooks {
 
     }
 
-    @After(order = 10, value = "not(@fail)")
+    @After()
     public void after1(){
-
+        driver.quit();
     }
 
-    @After(order = 20, value = "@fail")
-    public void after2(){
-
-    }
 }
